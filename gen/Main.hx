@@ -421,7 +421,14 @@ class Main
 
             for (i in 0...definition.param.length)
             {
-                builder.append('_').append(definition.param[i].name);
+                if (isPointerType(definition.param[i].type))
+                {
+                    builder.append('cpp.Pointer.arrayElem(_${definition.param[i].name}, 0).raw');
+                }
+                else
+                {
+                    builder.append('_').append(definition.param[i].name);
+                }
 
                 if (i != definition.param.length - 1)
                 {
@@ -719,13 +726,57 @@ class Main
                     }
                     else
                     {
-                        return '($_native)&({$_argCount}[0])';
+                        return '($_native){$_argCount}';
                     }
                 }
             }
         }
 
         return '{$_argCount}';
+    }
+
+    /**
+     * Returns if the provided native type is a pointer.
+     * Used to tell if we should use Pointer.arrayElem to get the address of the first element for OSX / clang compatibility.
+     * @param _native Native type to check.
+     * @return Bool
+     */
+    static function isPointerType(_native : String) : Bool
+    {
+        if (_native == 'const GLchar *' ||
+            _native == 'const GLcharARB *' ||
+            _native == 'const GLchar *const*' ||
+            _native == 'const GLcharARB **' ||
+            _native == 'const void *' ||
+            _native == 'void *' ||
+            _native == 'GLeglImageOES' ||
+            _native == 'GLeglClientBufferEXT') return false;
+
+        var typeParts = _native.split(' ');
+
+        for (part in typeParts)
+        {
+            for (type in glTypes.keys())
+            {
+                if (part == type)
+                {
+                    // Remove the GL type so we only have the pointer stuff remaining
+                    typeParts.remove(type);
+
+                    var remaining = typeParts.join('').replace(' ', '');
+                    if (remaining == '')
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     // Static extension helpers for string buffers
