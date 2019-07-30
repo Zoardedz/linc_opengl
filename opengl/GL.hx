@@ -2785,10 +2785,10 @@ extern class GL {
 	inline static function glHint(_target : Int, _mode : Int) : Void
 		{ return untyped __cpp__("glHint({0}, {1})", _target, _mode); }
 
-	inline static function glLineWidth(_width : Float) : Void
+	inline static function glLineWidth(_width : cpp.Float32) : Void
 		{ return untyped __cpp__("glLineWidth({0})", _width); }
 
-	inline static function glPointSize(_size : Float) : Void
+	inline static function glPointSize(_size : cpp.Float32) : Void
 		{ return untyped __cpp__("glPointSize({0})", _size); }
 
 	inline static function glPolygonMode(_face : Int, _mode : Int) : Void
@@ -2797,10 +2797,10 @@ extern class GL {
 	inline static function glScissor(_x : Int, _y : Int, _width : Int, _height : Int) : Void
 		{ return untyped __cpp__("glScissor({0}, {1}, {2}, {3})", _x, _y, _width, _height); }
 
-	inline static function glTexParameterf(_target : Int, _pname : Int, _param : Float) : Void
+	inline static function glTexParameterf(_target : Int, _pname : Int, _param : cpp.Float32) : Void
 		{ return untyped __cpp__("glTexParameterf({0}, {1}, {2})", _target, _pname, _param); }
 
-	inline static function glTexParameterfv(_target : Int, _pname : Int, _params : Array<Float>) : Void
+	inline static function glTexParameterfv(_target : Int, _pname : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glTexParameterfv({0}, {1}, (const GLfloat *){2})", _target, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glTexParameteri(_target : Int, _pname : Int, _param : Int) : Void
@@ -2821,13 +2821,13 @@ extern class GL {
 	inline static function glClear(_mask : Int) : Void
 		{ return untyped __cpp__("glClear({0})", _mask); }
 
-	inline static function glClearColor(_red : Float, _green : Float, _blue : Float, _alpha : Float) : Void
+	inline static function glClearColor(_red : cpp.Float32, _green : cpp.Float32, _blue : cpp.Float32, _alpha : cpp.Float32) : Void
 		{ return untyped __cpp__("glClearColor({0}, {1}, {2}, {3})", _red, _green, _blue, _alpha); }
 
 	inline static function glClearStencil(_s : Int) : Void
 		{ return untyped __cpp__("glClearStencil({0})", _s); }
 
-	inline static function glClearDepth(_depth : cpp.Float64) : Void
+	inline static function glClearDepth(_depth : Float) : Void
 		{ return untyped __cpp__("glClearDepth({0})", _depth); }
 
 	inline static function glStencilMask(_mask : Int) : Void
@@ -2866,7 +2866,7 @@ extern class GL {
 	inline static function glDepthFunc(_func : Int) : Void
 		{ return untyped __cpp__("glDepthFunc({0})", _func); }
 
-	inline static function glPixelStoref(_pname : Int, _param : Float) : Void
+	inline static function glPixelStoref(_pname : Int, _param : cpp.Float32) : Void
 		{ return untyped __cpp__("glPixelStoref({0}, {1})", _pname, _param); }
 
 	inline static function glPixelStorei(_pname : Int, _param : Int) : Void
@@ -2881,13 +2881,13 @@ extern class GL {
 	inline static function glGetBooleanv(_pname : Int, _data : Array<Bool>) : Void
 		{ return untyped __cpp__("glGetBooleanv({0}, (GLboolean *){1})", _pname, cpp.Pointer.arrayElem(_data, 0).raw); }
 
-	inline static function glGetDoublev(_pname : Int, _data : Array<cpp.Float64>) : Void
+	inline static function glGetDoublev(_pname : Int, _data : Array<Float>) : Void
 		{ return untyped __cpp__("glGetDoublev({0}, (GLdouble *){1})", _pname, cpp.Pointer.arrayElem(_data, 0).raw); }
 
 	inline static function glGetError() : Int
 		{ return untyped __cpp__("glGetError()"); }
 
-	inline static function glGetFloatv(_pname : Int, _data : Array<Float>) : Void
+	inline static function glGetFloatv(_pname : Int, _data : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetFloatv({0}, (GLfloat *){1})", _pname, cpp.Pointer.arrayElem(_data, 0).raw); }
 
 	inline static function glGetIntegerv(_pname : Int, _data : Array<Int>) : Void
@@ -2899,13 +2899,13 @@ extern class GL {
 	inline static function glGetTexImage(_target : Int, _level : Int, _format : Int, _type : Int, _pixels : BytesData) : Void
 		{ return untyped __cpp__("glGetTexImage({0}, {1}, {2}, {3}, (void *)&({4}[0]))", _target, _level, _format, _type, _pixels); }
 
-	inline static function glGetTexParameterfv(_target : Int, _pname : Int, _params : Array<Float>) : Void
+	inline static function glGetTexParameterfv(_target : Int, _pname : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetTexParameterfv({0}, {1}, (GLfloat *){2})", _target, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetTexParameteriv(_target : Int, _pname : Int, _params : Array<Int>) : Void
 		{ return untyped __cpp__("glGetTexParameteriv({0}, {1}, (GLint *){2})", _target, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
-	inline static function glGetTexLevelParameterfv(_target : Int, _level : Int, _pname : Int, _params : Array<Float>) : Void
+	inline static function glGetTexLevelParameterfv(_target : Int, _level : Int, _pname : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetTexLevelParameterfv({0}, {1}, {2}, (GLfloat *){3})", _target, _level, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetTexLevelParameteriv(_target : Int, _level : Int, _pname : Int, _params : Array<Int>) : Void
@@ -2914,7 +2914,7 @@ extern class GL {
 	inline static function glIsEnabled(_cap : Int) : Bool
 		{ return untyped __cpp__("glIsEnabled({0})", _cap); }
 
-	inline static function glDepthRange(_n : cpp.Float64, _f : cpp.Float64) : Void
+	inline static function glDepthRange(_n : Float, _f : Float) : Void
 		{ return untyped __cpp__("glDepthRange({0}, {1})", _n, _f); }
 
 	inline static function glViewport(_x : Int, _y : Int, _width : Int, _height : Int) : Void
@@ -2926,7 +2926,7 @@ extern class GL {
 	inline static function glDrawElements(_mode : Int, _count : Int, _type : Int, _indices : BytesData) : Void
 		{ return untyped __cpp__("glDrawElements({0}, {1}, {2}, (const void *)&({3}[0]))", _mode, _count, _type, _indices); }
 
-	inline static function glPolygonOffset(_factor : Float, _units : Float) : Void
+	inline static function glPolygonOffset(_factor : cpp.Float32, _units : cpp.Float32) : Void
 		{ return untyped __cpp__("glPolygonOffset({0}, {1})", _factor, _units); }
 
 	inline static function glCopyTexImage1D(_target : Int, _level : Int, _internalformat : Int, _x : Int, _y : Int, _width : Int, _border : Int) : Void
@@ -2974,7 +2974,7 @@ extern class GL {
 	inline static function glActiveTexture(_texture : Int) : Void
 		{ return untyped __cpp__("glActiveTexture({0})", _texture); }
 
-	inline static function glSampleCoverage(_value : Float, _invert : Bool) : Void
+	inline static function glSampleCoverage(_value : cpp.Float32, _invert : Bool) : Void
 		{ return untyped __cpp__("glSampleCoverage({0}, {1})", _value, _invert); }
 
 	inline static function glCompressedTexImage3D(_target : Int, _level : Int, _internalformat : Int, _width : Int, _height : Int, _depth : Int, _border : Int, _imageSize : Int, _data : BytesData) : Void
@@ -3007,10 +3007,10 @@ extern class GL {
 	inline static function glMultiDrawElements(_mode : Int, _count : Array<Int>, _type : Int, _indices : Void, _drawcount : Int) : Void
 		{ return untyped __cpp__("glMultiDrawElements({0}, (const GLsizei *){1}, {2}, {3}, {4})", _mode, cpp.Pointer.arrayElem(_count, 0).raw, _type, _indices, _drawcount); }
 
-	inline static function glPointParameterf(_pname : Int, _param : Float) : Void
+	inline static function glPointParameterf(_pname : Int, _param : cpp.Float32) : Void
 		{ return untyped __cpp__("glPointParameterf({0}, {1})", _pname, _param); }
 
-	inline static function glPointParameterfv(_pname : Int, _params : Array<Float>) : Void
+	inline static function glPointParameterfv(_pname : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glPointParameterfv({0}, (const GLfloat *){1})", _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glPointParameteri(_pname : Int, _param : Int) : Void
@@ -3019,7 +3019,7 @@ extern class GL {
 	inline static function glPointParameteriv(_pname : Int, _params : Array<Int>) : Void
 		{ return untyped __cpp__("glPointParameteriv({0}, (const GLint *){1})", _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
-	inline static function glBlendColor(_red : Float, _green : Float, _blue : Float, _alpha : Float) : Void
+	inline static function glBlendColor(_red : cpp.Float32, _green : cpp.Float32, _blue : cpp.Float32, _alpha : cpp.Float32) : Void
 		{ return untyped __cpp__("glBlendColor({0}, {1}, {2}, {3})", _red, _green, _blue, _alpha); }
 
 	inline static function glBlendEquation(_mode : Int) : Void
@@ -3157,16 +3157,16 @@ extern class GL {
 	inline static function glGetUniformLocation(_program : Int, _name : String) : Int
 		{ return untyped __cpp__("glGetUniformLocation({0}, {1})", _program, _name); }
 
-	inline static function glGetUniformfv(_program : Int, _location : Int, _params : Array<Float>) : Void
+	inline static function glGetUniformfv(_program : Int, _location : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetUniformfv({0}, {1}, (GLfloat *){2})", _program, _location, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetUniformiv(_program : Int, _location : Int, _params : Array<Int>) : Void
 		{ return untyped __cpp__("glGetUniformiv({0}, {1}, (GLint *){2})", _program, _location, cpp.Pointer.arrayElem(_params, 0).raw); }
 
-	inline static function glGetVertexAttribdv(_index : Int, _pname : Int, _params : Array<cpp.Float64>) : Void
+	inline static function glGetVertexAttribdv(_index : Int, _pname : Int, _params : Array<Float>) : Void
 		{ return untyped __cpp__("glGetVertexAttribdv({0}, {1}, (GLdouble *){2})", _index, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
-	inline static function glGetVertexAttribfv(_index : Int, _pname : Int, _params : Array<Float>) : Void
+	inline static function glGetVertexAttribfv(_index : Int, _pname : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetVertexAttribfv({0}, {1}, (GLfloat *){2})", _index, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetVertexAttribiv(_index : Int, _pname : Int, _params : Array<Int>) : Void
@@ -3190,16 +3190,16 @@ extern class GL {
 	inline static function glUseProgram(_program : Int) : Void
 		{ return untyped __cpp__("glUseProgram({0})", _program); }
 
-	inline static function glUniform1f(_location : Int, _v0 : Float) : Void
+	inline static function glUniform1f(_location : Int, _v0 : cpp.Float32) : Void
 		{ return untyped __cpp__("glUniform1f({0}, {1})", _location, _v0); }
 
-	inline static function glUniform2f(_location : Int, _v0 : Float, _v1 : Float) : Void
+	inline static function glUniform2f(_location : Int, _v0 : cpp.Float32, _v1 : cpp.Float32) : Void
 		{ return untyped __cpp__("glUniform2f({0}, {1}, {2})", _location, _v0, _v1); }
 
-	inline static function glUniform3f(_location : Int, _v0 : Float, _v1 : Float, _v2 : Float) : Void
+	inline static function glUniform3f(_location : Int, _v0 : cpp.Float32, _v1 : cpp.Float32, _v2 : cpp.Float32) : Void
 		{ return untyped __cpp__("glUniform3f({0}, {1}, {2}, {3})", _location, _v0, _v1, _v2); }
 
-	inline static function glUniform4f(_location : Int, _v0 : Float, _v1 : Float, _v2 : Float, _v3 : Float) : Void
+	inline static function glUniform4f(_location : Int, _v0 : cpp.Float32, _v1 : cpp.Float32, _v2 : cpp.Float32, _v3 : cpp.Float32) : Void
 		{ return untyped __cpp__("glUniform4f({0}, {1}, {2}, {3}, {4})", _location, _v0, _v1, _v2, _v3); }
 
 	inline static function glUniform1i(_location : Int, _v0 : Int) : Void
@@ -3214,16 +3214,16 @@ extern class GL {
 	inline static function glUniform4i(_location : Int, _v0 : Int, _v1 : Int, _v2 : Int, _v3 : Int) : Void
 		{ return untyped __cpp__("glUniform4i({0}, {1}, {2}, {3}, {4})", _location, _v0, _v1, _v2, _v3); }
 
-	inline static function glUniform1fv(_location : Int, _count : Int, _value : Array<Float>) : Void
+	inline static function glUniform1fv(_location : Int, _count : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniform1fv({0}, {1}, (const GLfloat *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniform2fv(_location : Int, _count : Int, _value : Array<Float>) : Void
+	inline static function glUniform2fv(_location : Int, _count : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniform2fv({0}, {1}, (const GLfloat *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniform3fv(_location : Int, _count : Int, _value : Array<Float>) : Void
+	inline static function glUniform3fv(_location : Int, _count : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniform3fv({0}, {1}, (const GLfloat *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniform4fv(_location : Int, _count : Int, _value : Array<Float>) : Void
+	inline static function glUniform4fv(_location : Int, _count : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniform4fv({0}, {1}, (const GLfloat *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
 	inline static function glUniform1iv(_location : Int, _count : Int, _value : Array<Int>) : Void
@@ -3238,28 +3238,28 @@ extern class GL {
 	inline static function glUniform4iv(_location : Int, _count : Int, _value : Array<Int>) : Void
 		{ return untyped __cpp__("glUniform4iv({0}, {1}, (const GLint *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix2fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix2fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix2fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix3fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix3fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix3fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix4fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix4fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix4fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
 	inline static function glValidateProgram(_program : Int) : Void
 		{ return untyped __cpp__("glValidateProgram({0})", _program); }
 
-	inline static function glVertexAttrib1d(_index : Int, _x : cpp.Float64) : Void
+	inline static function glVertexAttrib1d(_index : Int, _x : Float) : Void
 		{ return untyped __cpp__("glVertexAttrib1d({0}, {1})", _index, _x); }
 
-	inline static function glVertexAttrib1dv(_index : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glVertexAttrib1dv(_index : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glVertexAttrib1dv({0}, (const GLdouble *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttrib1f(_index : Int, _x : Float) : Void
+	inline static function glVertexAttrib1f(_index : Int, _x : cpp.Float32) : Void
 		{ return untyped __cpp__("glVertexAttrib1f({0}, {1})", _index, _x); }
 
-	inline static function glVertexAttrib1fv(_index : Int, _v : Array<Float>) : Void
+	inline static function glVertexAttrib1fv(_index : Int, _v : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glVertexAttrib1fv({0}, (const GLfloat *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
 	inline static function glVertexAttrib1s(_index : Int, _x : Int) : Void
@@ -3268,16 +3268,16 @@ extern class GL {
 	inline static function glVertexAttrib1sv(_index : Int, _v : Array<Int>) : Void
 		{ return untyped __cpp__("glVertexAttrib1sv({0}, (const GLshort *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttrib2d(_index : Int, _x : cpp.Float64, _y : cpp.Float64) : Void
+	inline static function glVertexAttrib2d(_index : Int, _x : Float, _y : Float) : Void
 		{ return untyped __cpp__("glVertexAttrib2d({0}, {1}, {2})", _index, _x, _y); }
 
-	inline static function glVertexAttrib2dv(_index : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glVertexAttrib2dv(_index : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glVertexAttrib2dv({0}, (const GLdouble *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttrib2f(_index : Int, _x : Float, _y : Float) : Void
+	inline static function glVertexAttrib2f(_index : Int, _x : cpp.Float32, _y : cpp.Float32) : Void
 		{ return untyped __cpp__("glVertexAttrib2f({0}, {1}, {2})", _index, _x, _y); }
 
-	inline static function glVertexAttrib2fv(_index : Int, _v : Array<Float>) : Void
+	inline static function glVertexAttrib2fv(_index : Int, _v : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glVertexAttrib2fv({0}, (const GLfloat *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
 	inline static function glVertexAttrib2s(_index : Int, _x : Int, _y : Int) : Void
@@ -3286,16 +3286,16 @@ extern class GL {
 	inline static function glVertexAttrib2sv(_index : Int, _v : Array<Int>) : Void
 		{ return untyped __cpp__("glVertexAttrib2sv({0}, (const GLshort *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttrib3d(_index : Int, _x : cpp.Float64, _y : cpp.Float64, _z : cpp.Float64) : Void
+	inline static function glVertexAttrib3d(_index : Int, _x : Float, _y : Float, _z : Float) : Void
 		{ return untyped __cpp__("glVertexAttrib3d({0}, {1}, {2}, {3})", _index, _x, _y, _z); }
 
-	inline static function glVertexAttrib3dv(_index : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glVertexAttrib3dv(_index : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glVertexAttrib3dv({0}, (const GLdouble *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttrib3f(_index : Int, _x : Float, _y : Float, _z : Float) : Void
+	inline static function glVertexAttrib3f(_index : Int, _x : cpp.Float32, _y : cpp.Float32, _z : cpp.Float32) : Void
 		{ return untyped __cpp__("glVertexAttrib3f({0}, {1}, {2}, {3})", _index, _x, _y, _z); }
 
-	inline static function glVertexAttrib3fv(_index : Int, _v : Array<Float>) : Void
+	inline static function glVertexAttrib3fv(_index : Int, _v : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glVertexAttrib3fv({0}, (const GLfloat *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
 	inline static function glVertexAttrib3s(_index : Int, _x : Int, _y : Int, _z : Int) : Void
@@ -3328,16 +3328,16 @@ extern class GL {
 	inline static function glVertexAttrib4bv(_index : Int, _v : BytesData) : Void
 		{ return untyped __cpp__("glVertexAttrib4bv({0}, (const GLbyte *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttrib4d(_index : Int, _x : cpp.Float64, _y : cpp.Float64, _z : cpp.Float64, _w : cpp.Float64) : Void
+	inline static function glVertexAttrib4d(_index : Int, _x : Float, _y : Float, _z : Float, _w : Float) : Void
 		{ return untyped __cpp__("glVertexAttrib4d({0}, {1}, {2}, {3}, {4})", _index, _x, _y, _z, _w); }
 
-	inline static function glVertexAttrib4dv(_index : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glVertexAttrib4dv(_index : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glVertexAttrib4dv({0}, (const GLdouble *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttrib4f(_index : Int, _x : Float, _y : Float, _z : Float, _w : Float) : Void
+	inline static function glVertexAttrib4f(_index : Int, _x : cpp.Float32, _y : cpp.Float32, _z : cpp.Float32, _w : cpp.Float32) : Void
 		{ return untyped __cpp__("glVertexAttrib4f({0}, {1}, {2}, {3}, {4})", _index, _x, _y, _z, _w); }
 
-	inline static function glVertexAttrib4fv(_index : Int, _v : Array<Float>) : Void
+	inline static function glVertexAttrib4fv(_index : Int, _v : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glVertexAttrib4fv({0}, (const GLfloat *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
 	inline static function glVertexAttrib4iv(_index : Int, _v : Array<Int>) : Void
@@ -3361,22 +3361,22 @@ extern class GL {
 	inline static function glVertexAttribPointer(_index : Int, _size : Int, _type : Int, _normalized : Bool, _stride : Int, _pointer : BytesData) : Void
 		{ return untyped __cpp__("glVertexAttribPointer({0}, {1}, {2}, {3}, {4}, (const void *)&({5}[0]))", _index, _size, _type, _normalized, _stride, _pointer); }
 
-	inline static function glUniformMatrix2x3fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix2x3fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix2x3fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix3x2fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix3x2fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix3x2fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix2x4fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix2x4fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix2x4fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix4x2fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix4x2fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix4x2fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix3x4fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix3x4fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix3x4fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix4x3fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glUniformMatrix4x3fv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glUniformMatrix4x3fv({0}, {1}, {2}, (const GLfloat *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
 	inline static function glColorMaski(_index : Int, _r : Bool, _g : Bool, _b : Bool, _a : Bool) : Void
@@ -3544,10 +3544,10 @@ extern class GL {
 	inline static function glClearBufferuiv(_buffer : Int, _drawbuffer : Int, _value : Array<Int>) : Void
 		{ return untyped __cpp__("glClearBufferuiv({0}, {1}, (const GLuint *){2})", _buffer, _drawbuffer, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glClearBufferfv(_buffer : Int, _drawbuffer : Int, _value : Array<Float>) : Void
+	inline static function glClearBufferfv(_buffer : Int, _drawbuffer : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glClearBufferfv({0}, {1}, (const GLfloat *){2})", _buffer, _drawbuffer, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glClearBufferfi(_buffer : Int, _drawbuffer : Int, _depth : Float, _stencil : Int) : Void
+	inline static function glClearBufferfi(_buffer : Int, _drawbuffer : Int, _depth : cpp.Float32, _stencil : Int) : Void
 		{ return untyped __cpp__("glClearBufferfi({0}, {1}, {2}, {3})", _buffer, _drawbuffer, _depth, _stencil); }
 
 	inline static function glGetStringi(_name : Int, _index : Int) : Void
@@ -3718,7 +3718,7 @@ extern class GL {
 	inline static function glTexImage3DMultisample(_target : Int, _samples : Int, _internalformat : Int, _width : Int, _height : Int, _depth : Int, _fixedsamplelocations : Bool) : Void
 		{ return untyped __cpp__("glTexImage3DMultisample({0}, {1}, {2}, {3}, {4}, {5}, {6})", _target, _samples, _internalformat, _width, _height, _depth, _fixedsamplelocations); }
 
-	inline static function glGetMultisamplefv(_pname : Int, _index : Int, _val : Array<Float>) : Void
+	inline static function glGetMultisamplefv(_pname : Int, _index : Int, _val : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetMultisamplefv({0}, {1}, (GLfloat *){2})", _pname, _index, cpp.Pointer.arrayElem(_val, 0).raw); }
 
 	inline static function glSampleMaski(_maskNumber : Int, _mask : Int) : Void
@@ -3748,10 +3748,10 @@ extern class GL {
 	inline static function glSamplerParameteriv(_sampler : Int, _pname : Int, _param : Array<Int>) : Void
 		{ return untyped __cpp__("glSamplerParameteriv({0}, {1}, (const GLint *){2})", _sampler, _pname, cpp.Pointer.arrayElem(_param, 0).raw); }
 
-	inline static function glSamplerParameterf(_sampler : Int, _pname : Int, _param : Float) : Void
+	inline static function glSamplerParameterf(_sampler : Int, _pname : Int, _param : cpp.Float32) : Void
 		{ return untyped __cpp__("glSamplerParameterf({0}, {1}, {2})", _sampler, _pname, _param); }
 
-	inline static function glSamplerParameterfv(_sampler : Int, _pname : Int, _param : Array<Float>) : Void
+	inline static function glSamplerParameterfv(_sampler : Int, _pname : Int, _param : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glSamplerParameterfv({0}, {1}, (const GLfloat *){2})", _sampler, _pname, cpp.Pointer.arrayElem(_param, 0).raw); }
 
 	inline static function glSamplerParameterIiv(_sampler : Int, _pname : Int, _param : Array<Int>) : Void
@@ -3766,7 +3766,7 @@ extern class GL {
 	inline static function glGetSamplerParameterIiv(_sampler : Int, _pname : Int, _params : Array<Int>) : Void
 		{ return untyped __cpp__("glGetSamplerParameterIiv({0}, {1}, (GLint *){2})", _sampler, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
-	inline static function glGetSamplerParameterfv(_sampler : Int, _pname : Int, _params : Array<Float>) : Void
+	inline static function glGetSamplerParameterfv(_sampler : Int, _pname : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetSamplerParameterfv({0}, {1}, (GLfloat *){2})", _sampler, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetSamplerParameterIuiv(_sampler : Int, _pname : Int, _params : Array<Int>) : Void
@@ -3898,7 +3898,7 @@ extern class GL {
 	inline static function glSecondaryColorP3uiv(_type : Int, _color : Array<Int>) : Void
 		{ return untyped __cpp__("glSecondaryColorP3uiv({0}, (const GLuint *){1})", _type, cpp.Pointer.arrayElem(_color, 0).raw); }
 
-	inline static function glMinSampleShading(_value : Float) : Void
+	inline static function glMinSampleShading(_value : cpp.Float32) : Void
 		{ return untyped __cpp__("glMinSampleShading({0})", _value); }
 
 	inline static function glBlendEquationi(_buf : Int, _mode : Int) : Void
@@ -3919,58 +3919,58 @@ extern class GL {
 	inline static function glDrawElementsIndirect(_mode : Int, _type : Int, _indirect : BytesData) : Void
 		{ return untyped __cpp__("glDrawElementsIndirect({0}, {1}, (const void *)&({2}[0]))", _mode, _type, _indirect); }
 
-	inline static function glUniform1d(_location : Int, _x : cpp.Float64) : Void
+	inline static function glUniform1d(_location : Int, _x : Float) : Void
 		{ return untyped __cpp__("glUniform1d({0}, {1})", _location, _x); }
 
-	inline static function glUniform2d(_location : Int, _x : cpp.Float64, _y : cpp.Float64) : Void
+	inline static function glUniform2d(_location : Int, _x : Float, _y : Float) : Void
 		{ return untyped __cpp__("glUniform2d({0}, {1}, {2})", _location, _x, _y); }
 
-	inline static function glUniform3d(_location : Int, _x : cpp.Float64, _y : cpp.Float64, _z : cpp.Float64) : Void
+	inline static function glUniform3d(_location : Int, _x : Float, _y : Float, _z : Float) : Void
 		{ return untyped __cpp__("glUniform3d({0}, {1}, {2}, {3})", _location, _x, _y, _z); }
 
-	inline static function glUniform4d(_location : Int, _x : cpp.Float64, _y : cpp.Float64, _z : cpp.Float64, _w : cpp.Float64) : Void
+	inline static function glUniform4d(_location : Int, _x : Float, _y : Float, _z : Float, _w : Float) : Void
 		{ return untyped __cpp__("glUniform4d({0}, {1}, {2}, {3}, {4})", _location, _x, _y, _z, _w); }
 
-	inline static function glUniform1dv(_location : Int, _count : Int, _value : Array<cpp.Float64>) : Void
+	inline static function glUniform1dv(_location : Int, _count : Int, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniform1dv({0}, {1}, (const GLdouble *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniform2dv(_location : Int, _count : Int, _value : Array<cpp.Float64>) : Void
+	inline static function glUniform2dv(_location : Int, _count : Int, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniform2dv({0}, {1}, (const GLdouble *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniform3dv(_location : Int, _count : Int, _value : Array<cpp.Float64>) : Void
+	inline static function glUniform3dv(_location : Int, _count : Int, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniform3dv({0}, {1}, (const GLdouble *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniform4dv(_location : Int, _count : Int, _value : Array<cpp.Float64>) : Void
+	inline static function glUniform4dv(_location : Int, _count : Int, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniform4dv({0}, {1}, (const GLdouble *){2})", _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix2dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix2dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix2dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix3dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix3dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix3dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix4dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix4dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix4dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix2x3dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix2x3dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix2x3dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix2x4dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix2x4dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix2x4dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix3x2dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix3x2dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix3x2dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix3x4dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix3x4dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix3x4dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix4x2dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix4x2dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix4x2dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glUniformMatrix4x3dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glUniformMatrix4x3dv(_location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glUniformMatrix4x3dv({0}, {1}, {2}, (const GLdouble *){3})", _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glGetUniformdv(_program : Int, _location : Int, _params : Array<cpp.Float64>) : Void
+	inline static function glGetUniformdv(_program : Int, _location : Int, _params : Array<Float>) : Void
 		{ return untyped __cpp__("glGetUniformdv({0}, {1}, (GLdouble *){2})", _program, _location, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetSubroutineUniformLocation(_program : Int, _shadertype : Int, _name : String) : Int
@@ -4000,7 +4000,7 @@ extern class GL {
 	inline static function glPatchParameteri(_pname : Int, _value : Int) : Void
 		{ return untyped __cpp__("glPatchParameteri({0}, {1})", _pname, _value); }
 
-	inline static function glPatchParameterfv(_pname : Int, _values : Array<Float>) : Void
+	inline static function glPatchParameterfv(_pname : Int, _values : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glPatchParameterfv({0}, (const GLfloat *){1})", _pname, cpp.Pointer.arrayElem(_values, 0).raw); }
 
 	inline static function glBindTransformFeedback(_target : Int, _id : Int) : Void
@@ -4045,10 +4045,10 @@ extern class GL {
 	inline static function glGetShaderPrecisionFormat(_shadertype : Int, _precisiontype : Int, _range : Array<Int>, _precision : Array<Int>) : Void
 		{ return untyped __cpp__("glGetShaderPrecisionFormat({0}, {1}, (GLint *){2}, (GLint *){3})", _shadertype, _precisiontype, cpp.Pointer.arrayElem(_range, 0).raw, cpp.Pointer.arrayElem(_precision, 0).raw); }
 
-	inline static function glDepthRangef(_n : Float, _f : Float) : Void
+	inline static function glDepthRangef(_n : cpp.Float32, _f : cpp.Float32) : Void
 		{ return untyped __cpp__("glDepthRangef({0}, {1})", _n, _f); }
 
-	inline static function glClearDepthf(_d : Float) : Void
+	inline static function glClearDepthf(_d : cpp.Float32) : Void
 		{ return untyped __cpp__("glClearDepthf({0})", _d); }
 
 	inline static function glGetProgramBinary(_program : Int, _bufSize : Int, _length : Array<Int>, _binaryFormat : Array<Int>, _binary : BytesData) : Void
@@ -4090,16 +4090,16 @@ extern class GL {
 	inline static function glProgramUniform1iv(_program : Int, _location : Int, _count : Int, _value : Array<Int>) : Void
 		{ return untyped __cpp__("glProgramUniform1iv({0}, {1}, {2}, (const GLint *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniform1f(_program : Int, _location : Int, _v0 : Float) : Void
+	inline static function glProgramUniform1f(_program : Int, _location : Int, _v0 : cpp.Float32) : Void
 		{ return untyped __cpp__("glProgramUniform1f({0}, {1}, {2})", _program, _location, _v0); }
 
-	inline static function glProgramUniform1fv(_program : Int, _location : Int, _count : Int, _value : Array<Float>) : Void
+	inline static function glProgramUniform1fv(_program : Int, _location : Int, _count : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniform1fv({0}, {1}, {2}, (const GLfloat *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniform1d(_program : Int, _location : Int, _v0 : cpp.Float64) : Void
+	inline static function glProgramUniform1d(_program : Int, _location : Int, _v0 : Float) : Void
 		{ return untyped __cpp__("glProgramUniform1d({0}, {1}, {2})", _program, _location, _v0); }
 
-	inline static function glProgramUniform1dv(_program : Int, _location : Int, _count : Int, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniform1dv(_program : Int, _location : Int, _count : Int, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniform1dv({0}, {1}, {2}, (const GLdouble *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
 	inline static function glProgramUniform1ui(_program : Int, _location : Int, _v0 : Int) : Void
@@ -4114,16 +4114,16 @@ extern class GL {
 	inline static function glProgramUniform2iv(_program : Int, _location : Int, _count : Int, _value : Array<Int>) : Void
 		{ return untyped __cpp__("glProgramUniform2iv({0}, {1}, {2}, (const GLint *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniform2f(_program : Int, _location : Int, _v0 : Float, _v1 : Float) : Void
+	inline static function glProgramUniform2f(_program : Int, _location : Int, _v0 : cpp.Float32, _v1 : cpp.Float32) : Void
 		{ return untyped __cpp__("glProgramUniform2f({0}, {1}, {2}, {3})", _program, _location, _v0, _v1); }
 
-	inline static function glProgramUniform2fv(_program : Int, _location : Int, _count : Int, _value : Array<Float>) : Void
+	inline static function glProgramUniform2fv(_program : Int, _location : Int, _count : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniform2fv({0}, {1}, {2}, (const GLfloat *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniform2d(_program : Int, _location : Int, _v0 : cpp.Float64, _v1 : cpp.Float64) : Void
+	inline static function glProgramUniform2d(_program : Int, _location : Int, _v0 : Float, _v1 : Float) : Void
 		{ return untyped __cpp__("glProgramUniform2d({0}, {1}, {2}, {3})", _program, _location, _v0, _v1); }
 
-	inline static function glProgramUniform2dv(_program : Int, _location : Int, _count : Int, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniform2dv(_program : Int, _location : Int, _count : Int, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniform2dv({0}, {1}, {2}, (const GLdouble *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
 	inline static function glProgramUniform2ui(_program : Int, _location : Int, _v0 : Int, _v1 : Int) : Void
@@ -4138,16 +4138,16 @@ extern class GL {
 	inline static function glProgramUniform3iv(_program : Int, _location : Int, _count : Int, _value : Array<Int>) : Void
 		{ return untyped __cpp__("glProgramUniform3iv({0}, {1}, {2}, (const GLint *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniform3f(_program : Int, _location : Int, _v0 : Float, _v1 : Float, _v2 : Float) : Void
+	inline static function glProgramUniform3f(_program : Int, _location : Int, _v0 : cpp.Float32, _v1 : cpp.Float32, _v2 : cpp.Float32) : Void
 		{ return untyped __cpp__("glProgramUniform3f({0}, {1}, {2}, {3}, {4})", _program, _location, _v0, _v1, _v2); }
 
-	inline static function glProgramUniform3fv(_program : Int, _location : Int, _count : Int, _value : Array<Float>) : Void
+	inline static function glProgramUniform3fv(_program : Int, _location : Int, _count : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniform3fv({0}, {1}, {2}, (const GLfloat *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniform3d(_program : Int, _location : Int, _v0 : cpp.Float64, _v1 : cpp.Float64, _v2 : cpp.Float64) : Void
+	inline static function glProgramUniform3d(_program : Int, _location : Int, _v0 : Float, _v1 : Float, _v2 : Float) : Void
 		{ return untyped __cpp__("glProgramUniform3d({0}, {1}, {2}, {3}, {4})", _program, _location, _v0, _v1, _v2); }
 
-	inline static function glProgramUniform3dv(_program : Int, _location : Int, _count : Int, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniform3dv(_program : Int, _location : Int, _count : Int, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniform3dv({0}, {1}, {2}, (const GLdouble *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
 	inline static function glProgramUniform3ui(_program : Int, _location : Int, _v0 : Int, _v1 : Int, _v2 : Int) : Void
@@ -4162,16 +4162,16 @@ extern class GL {
 	inline static function glProgramUniform4iv(_program : Int, _location : Int, _count : Int, _value : Array<Int>) : Void
 		{ return untyped __cpp__("glProgramUniform4iv({0}, {1}, {2}, (const GLint *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniform4f(_program : Int, _location : Int, _v0 : Float, _v1 : Float, _v2 : Float, _v3 : Float) : Void
+	inline static function glProgramUniform4f(_program : Int, _location : Int, _v0 : cpp.Float32, _v1 : cpp.Float32, _v2 : cpp.Float32, _v3 : cpp.Float32) : Void
 		{ return untyped __cpp__("glProgramUniform4f({0}, {1}, {2}, {3}, {4}, {5})", _program, _location, _v0, _v1, _v2, _v3); }
 
-	inline static function glProgramUniform4fv(_program : Int, _location : Int, _count : Int, _value : Array<Float>) : Void
+	inline static function glProgramUniform4fv(_program : Int, _location : Int, _count : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniform4fv({0}, {1}, {2}, (const GLfloat *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniform4d(_program : Int, _location : Int, _v0 : cpp.Float64, _v1 : cpp.Float64, _v2 : cpp.Float64, _v3 : cpp.Float64) : Void
+	inline static function glProgramUniform4d(_program : Int, _location : Int, _v0 : Float, _v1 : Float, _v2 : Float, _v3 : Float) : Void
 		{ return untyped __cpp__("glProgramUniform4d({0}, {1}, {2}, {3}, {4}, {5})", _program, _location, _v0, _v1, _v2, _v3); }
 
-	inline static function glProgramUniform4dv(_program : Int, _location : Int, _count : Int, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniform4dv(_program : Int, _location : Int, _count : Int, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniform4dv({0}, {1}, {2}, (const GLdouble *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
 	inline static function glProgramUniform4ui(_program : Int, _location : Int, _v0 : Int, _v1 : Int, _v2 : Int, _v3 : Int) : Void
@@ -4180,58 +4180,58 @@ extern class GL {
 	inline static function glProgramUniform4uiv(_program : Int, _location : Int, _count : Int, _value : Array<Int>) : Void
 		{ return untyped __cpp__("glProgramUniform4uiv({0}, {1}, {2}, (const GLuint *){3})", _program, _location, _count, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix2fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix2fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix2fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix3fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix3fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix3fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix4fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix4fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix4fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix2dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix2dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix2dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix3dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix3dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix3dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix4dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix4dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix4dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix2x3fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix2x3fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix2x3fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix3x2fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix3x2fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix3x2fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix2x4fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix2x4fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix2x4fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix4x2fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix4x2fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix4x2fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix3x4fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix3x4fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix3x4fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix4x3fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
+	inline static function glProgramUniformMatrix4x3fv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix4x3fv({0}, {1}, {2}, {3}, (const GLfloat *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix2x3dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix2x3dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix2x3dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix3x2dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix3x2dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix3x2dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix2x4dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix2x4dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix2x4dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix4x2dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix4x2dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix4x2dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix3x4dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix3x4dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix3x4dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glProgramUniformMatrix4x3dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<cpp.Float64>) : Void
+	inline static function glProgramUniformMatrix4x3dv(_program : Int, _location : Int, _count : Int, _transpose : Bool, _value : Array<Float>) : Void
 		{ return untyped __cpp__("glProgramUniformMatrix4x3dv({0}, {1}, {2}, {3}, (const GLdouble *){4})", _program, _location, _count, _transpose, cpp.Pointer.arrayElem(_value, 0).raw); }
 
 	inline static function glValidateProgramPipeline(_pipeline : Int) : Void
@@ -4240,43 +4240,43 @@ extern class GL {
 	inline static function glGetProgramPipelineInfoLog(_pipeline : Int, _bufSize : Int, _length : Array<Int>, _infoLog : Array<cpp.UInt8>) : Void
 		{ return untyped __cpp__("glGetProgramPipelineInfoLog({0}, {1}, (GLsizei *){2}, (GLchar *){3})", _pipeline, _bufSize, cpp.Pointer.arrayElem(_length, 0).raw, cpp.Pointer.arrayElem(_infoLog, 0).raw); }
 
-	inline static function glVertexAttribL1d(_index : Int, _x : cpp.Float64) : Void
+	inline static function glVertexAttribL1d(_index : Int, _x : Float) : Void
 		{ return untyped __cpp__("glVertexAttribL1d({0}, {1})", _index, _x); }
 
-	inline static function glVertexAttribL2d(_index : Int, _x : cpp.Float64, _y : cpp.Float64) : Void
+	inline static function glVertexAttribL2d(_index : Int, _x : Float, _y : Float) : Void
 		{ return untyped __cpp__("glVertexAttribL2d({0}, {1}, {2})", _index, _x, _y); }
 
-	inline static function glVertexAttribL3d(_index : Int, _x : cpp.Float64, _y : cpp.Float64, _z : cpp.Float64) : Void
+	inline static function glVertexAttribL3d(_index : Int, _x : Float, _y : Float, _z : Float) : Void
 		{ return untyped __cpp__("glVertexAttribL3d({0}, {1}, {2}, {3})", _index, _x, _y, _z); }
 
-	inline static function glVertexAttribL4d(_index : Int, _x : cpp.Float64, _y : cpp.Float64, _z : cpp.Float64, _w : cpp.Float64) : Void
+	inline static function glVertexAttribL4d(_index : Int, _x : Float, _y : Float, _z : Float, _w : Float) : Void
 		{ return untyped __cpp__("glVertexAttribL4d({0}, {1}, {2}, {3}, {4})", _index, _x, _y, _z, _w); }
 
-	inline static function glVertexAttribL1dv(_index : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glVertexAttribL1dv(_index : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glVertexAttribL1dv({0}, (const GLdouble *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttribL2dv(_index : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glVertexAttribL2dv(_index : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glVertexAttribL2dv({0}, (const GLdouble *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttribL3dv(_index : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glVertexAttribL3dv(_index : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glVertexAttribL3dv({0}, (const GLdouble *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glVertexAttribL4dv(_index : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glVertexAttribL4dv(_index : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glVertexAttribL4dv({0}, (const GLdouble *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
 	inline static function glVertexAttribLPointer(_index : Int, _size : Int, _type : Int, _stride : Int, _pointer : BytesData) : Void
 		{ return untyped __cpp__("glVertexAttribLPointer({0}, {1}, {2}, {3}, (const void *)&({4}[0]))", _index, _size, _type, _stride, _pointer); }
 
-	inline static function glGetVertexAttribLdv(_index : Int, _pname : Int, _params : Array<cpp.Float64>) : Void
+	inline static function glGetVertexAttribLdv(_index : Int, _pname : Int, _params : Array<Float>) : Void
 		{ return untyped __cpp__("glGetVertexAttribLdv({0}, {1}, (GLdouble *){2})", _index, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
-	inline static function glViewportArrayv(_first : Int, _count : Int, _v : Array<Float>) : Void
+	inline static function glViewportArrayv(_first : Int, _count : Int, _v : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glViewportArrayv({0}, {1}, (const GLfloat *){2})", _first, _count, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glViewportIndexedf(_index : Int, _x : Float, _y : Float, _w : Float, _h : Float) : Void
+	inline static function glViewportIndexedf(_index : Int, _x : cpp.Float32, _y : cpp.Float32, _w : cpp.Float32, _h : cpp.Float32) : Void
 		{ return untyped __cpp__("glViewportIndexedf({0}, {1}, {2}, {3}, {4})", _index, _x, _y, _w, _h); }
 
-	inline static function glViewportIndexedfv(_index : Int, _v : Array<Float>) : Void
+	inline static function glViewportIndexedfv(_index : Int, _v : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glViewportIndexedfv({0}, (const GLfloat *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
 	inline static function glScissorArrayv(_first : Int, _count : Int, _v : Array<Int>) : Void
@@ -4288,16 +4288,16 @@ extern class GL {
 	inline static function glScissorIndexedv(_index : Int, _v : Array<Int>) : Void
 		{ return untyped __cpp__("glScissorIndexedv({0}, (const GLint *){1})", _index, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glDepthRangeArrayv(_first : Int, _count : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glDepthRangeArrayv(_first : Int, _count : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glDepthRangeArrayv({0}, {1}, (const GLdouble *){2})", _first, _count, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glDepthRangeIndexed(_index : Int, _n : cpp.Float64, _f : cpp.Float64) : Void
+	inline static function glDepthRangeIndexed(_index : Int, _n : Float, _f : Float) : Void
 		{ return untyped __cpp__("glDepthRangeIndexed({0}, {1}, {2})", _index, _n, _f); }
 
-	inline static function glGetFloati_v(_target : Int, _index : Int, _data : Array<Float>) : Void
+	inline static function glGetFloati_v(_target : Int, _index : Int, _data : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetFloati_v({0}, {1}, (GLfloat *){2})", _target, _index, cpp.Pointer.arrayElem(_data, 0).raw); }
 
-	inline static function glGetDoublei_v(_target : Int, _index : Int, _data : Array<cpp.Float64>) : Void
+	inline static function glGetDoublei_v(_target : Int, _index : Int, _data : Array<Float>) : Void
 		{ return untyped __cpp__("glGetDoublei_v({0}, {1}, (GLdouble *){2})", _target, _index, cpp.Pointer.arrayElem(_data, 0).raw); }
 
 	inline static function glDrawArraysInstancedBaseInstance(_mode : Int, _first : Int, _count : Int, _instancecount : Int, _baseinstance : Int) : Void
@@ -4597,10 +4597,10 @@ extern class GL {
 	inline static function glClearNamedFramebufferuiv(_framebuffer : Int, _buffer : Int, _drawbuffer : Int, _value : Array<Int>) : Void
 		{ return untyped __cpp__("glClearNamedFramebufferuiv({0}, {1}, {2}, (const GLuint *){3})", _framebuffer, _buffer, _drawbuffer, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glClearNamedFramebufferfv(_framebuffer : Int, _buffer : Int, _drawbuffer : Int, _value : Array<Float>) : Void
+	inline static function glClearNamedFramebufferfv(_framebuffer : Int, _buffer : Int, _drawbuffer : Int, _value : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glClearNamedFramebufferfv({0}, {1}, {2}, (const GLfloat *){3})", _framebuffer, _buffer, _drawbuffer, cpp.Pointer.arrayElem(_value, 0).raw); }
 
-	inline static function glClearNamedFramebufferfi(_framebuffer : Int, _buffer : Int, _drawbuffer : Int, _depth : Float, _stencil : Int) : Void
+	inline static function glClearNamedFramebufferfi(_framebuffer : Int, _buffer : Int, _drawbuffer : Int, _depth : cpp.Float32, _stencil : Int) : Void
 		{ return untyped __cpp__("glClearNamedFramebufferfi({0}, {1}, {2}, {3}, {4})", _framebuffer, _buffer, _drawbuffer, _depth, _stencil); }
 
 	inline static function glBlitNamedFramebuffer(_readFramebuffer : Int, _drawFramebuffer : Int, _srcX0 : Int, _srcY0 : Int, _srcX1 : Int, _srcY1 : Int, _dstX0 : Int, _dstY0 : Int, _dstX1 : Int, _dstY1 : Int, _mask : Int, _filter : Int) : Void
@@ -4678,10 +4678,10 @@ extern class GL {
 	inline static function glCopyTextureSubImage3D(_texture : Int, _level : Int, _xoffset : Int, _yoffset : Int, _zoffset : Int, _x : Int, _y : Int, _width : Int, _height : Int) : Void
 		{ return untyped __cpp__("glCopyTextureSubImage3D({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8})", _texture, _level, _xoffset, _yoffset, _zoffset, _x, _y, _width, _height); }
 
-	inline static function glTextureParameterf(_texture : Int, _pname : Int, _param : Float) : Void
+	inline static function glTextureParameterf(_texture : Int, _pname : Int, _param : cpp.Float32) : Void
 		{ return untyped __cpp__("glTextureParameterf({0}, {1}, {2})", _texture, _pname, _param); }
 
-	inline static function glTextureParameterfv(_texture : Int, _pname : Int, _param : Array<Float>) : Void
+	inline static function glTextureParameterfv(_texture : Int, _pname : Int, _param : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glTextureParameterfv({0}, {1}, (const GLfloat *){2})", _texture, _pname, cpp.Pointer.arrayElem(_param, 0).raw); }
 
 	inline static function glTextureParameteri(_texture : Int, _pname : Int, _param : Int) : Void
@@ -4708,13 +4708,13 @@ extern class GL {
 	inline static function glGetCompressedTextureImage(_texture : Int, _level : Int, _bufSize : Int, _pixels : BytesData) : Void
 		{ return untyped __cpp__("glGetCompressedTextureImage({0}, {1}, {2}, (void *)&({3}[0]))", _texture, _level, _bufSize, _pixels); }
 
-	inline static function glGetTextureLevelParameterfv(_texture : Int, _level : Int, _pname : Int, _params : Array<Float>) : Void
+	inline static function glGetTextureLevelParameterfv(_texture : Int, _level : Int, _pname : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetTextureLevelParameterfv({0}, {1}, {2}, (GLfloat *){3})", _texture, _level, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetTextureLevelParameteriv(_texture : Int, _level : Int, _pname : Int, _params : Array<Int>) : Void
 		{ return untyped __cpp__("glGetTextureLevelParameteriv({0}, {1}, {2}, (GLint *){3})", _texture, _level, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
-	inline static function glGetTextureParameterfv(_texture : Int, _pname : Int, _params : Array<Float>) : Void
+	inline static function glGetTextureParameterfv(_texture : Int, _pname : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetTextureParameterfv({0}, {1}, (GLfloat *){2})", _texture, _pname, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetTextureParameterIiv(_texture : Int, _pname : Int, _params : Array<Int>) : Void
@@ -4807,10 +4807,10 @@ extern class GL {
 	inline static function glGetnTexImage(_target : Int, _level : Int, _format : Int, _type : Int, _bufSize : Int, _pixels : BytesData) : Void
 		{ return untyped __cpp__("glGetnTexImage({0}, {1}, {2}, {3}, {4}, (void *)&({5}[0]))", _target, _level, _format, _type, _bufSize, _pixels); }
 
-	inline static function glGetnUniformdv(_program : Int, _location : Int, _bufSize : Int, _params : Array<cpp.Float64>) : Void
+	inline static function glGetnUniformdv(_program : Int, _location : Int, _bufSize : Int, _params : Array<Float>) : Void
 		{ return untyped __cpp__("glGetnUniformdv({0}, {1}, {2}, (GLdouble *){3})", _program, _location, _bufSize, cpp.Pointer.arrayElem(_params, 0).raw); }
 
-	inline static function glGetnUniformfv(_program : Int, _location : Int, _bufSize : Int, _params : Array<Float>) : Void
+	inline static function glGetnUniformfv(_program : Int, _location : Int, _bufSize : Int, _params : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetnUniformfv({0}, {1}, {2}, (GLfloat *){3})", _program, _location, _bufSize, cpp.Pointer.arrayElem(_params, 0).raw); }
 
 	inline static function glGetnUniformiv(_program : Int, _location : Int, _bufSize : Int, _params : Array<Int>) : Void
@@ -4822,16 +4822,16 @@ extern class GL {
 	inline static function glReadnPixels(_x : Int, _y : Int, _width : Int, _height : Int, _format : Int, _type : Int, _bufSize : Int, _data : BytesData) : Void
 		{ return untyped __cpp__("glReadnPixels({0}, {1}, {2}, {3}, {4}, {5}, {6}, (void *)&({7}[0]))", _x, _y, _width, _height, _format, _type, _bufSize, _data); }
 
-	inline static function glGetnMapdv(_target : Int, _query : Int, _bufSize : Int, _v : Array<cpp.Float64>) : Void
+	inline static function glGetnMapdv(_target : Int, _query : Int, _bufSize : Int, _v : Array<Float>) : Void
 		{ return untyped __cpp__("glGetnMapdv({0}, {1}, {2}, (GLdouble *){3})", _target, _query, _bufSize, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glGetnMapfv(_target : Int, _query : Int, _bufSize : Int, _v : Array<Float>) : Void
+	inline static function glGetnMapfv(_target : Int, _query : Int, _bufSize : Int, _v : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetnMapfv({0}, {1}, {2}, (GLfloat *){3})", _target, _query, _bufSize, cpp.Pointer.arrayElem(_v, 0).raw); }
 
 	inline static function glGetnMapiv(_target : Int, _query : Int, _bufSize : Int, _v : Array<Int>) : Void
 		{ return untyped __cpp__("glGetnMapiv({0}, {1}, {2}, (GLint *){3})", _target, _query, _bufSize, cpp.Pointer.arrayElem(_v, 0).raw); }
 
-	inline static function glGetnPixelMapfv(_map : Int, _bufSize : Int, _values : Array<Float>) : Void
+	inline static function glGetnPixelMapfv(_map : Int, _bufSize : Int, _values : Array<cpp.Float32>) : Void
 		{ return untyped __cpp__("glGetnPixelMapfv({0}, {1}, (GLfloat *){2})", _map, _bufSize, cpp.Pointer.arrayElem(_values, 0).raw); }
 
 	inline static function glGetnPixelMapuiv(_map : Int, _bufSize : Int, _values : Array<Int>) : Void
@@ -4870,7 +4870,7 @@ extern class GL {
 	inline static function glMultiDrawElementsIndirectCount(_mode : Int, _type : Int, _indirect : BytesData, _drawcount : Int, _maxdrawcount : Int, _stride : Int) : Void
 		{ return untyped __cpp__("glMultiDrawElementsIndirectCount({0}, {1}, (const void *)&({2}[0]), {3}, {4}, {5})", _mode, _type, _indirect, _drawcount, _maxdrawcount, _stride); }
 
-	inline static function glPolygonOffsetClamp(_factor : Float, _units : Float, _clamp : Float) : Void
+	inline static function glPolygonOffsetClamp(_factor : cpp.Float32, _units : cpp.Float32, _clamp : cpp.Float32) : Void
 		{ return untyped __cpp__("glPolygonOffsetClamp({0}, {1}, {2})", _factor, _units, _clamp); }
 
 	inline static function glGetTextureHandleARB(_texture : Int) : cpp.UInt64

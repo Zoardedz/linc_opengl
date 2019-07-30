@@ -94,11 +94,11 @@ class Main
         'GLintptr'   => 'Int',
         'GLsizeiptr' => 'Int',
         'GLbitfield' => 'Int',
-        'GLfloat'    => 'Float',
-        'GLhalf'     => 'Float',
-        'GLclampf'   => 'Float',
-        'GLdouble'   => 'cpp.Float64',
-        'GLclampd'   => 'cpp.Float64',
+        'GLfloat'    => 'cpp.Float32',
+        'GLhalf'     => 'cpp.Float32',
+        'GLclampf'   => 'cpp.Float32',
+        'GLdouble'   => 'Float',
+        'GLclampd'   => 'Float',
         'GLsync'     => 'GLSync',
 
         // Extension types
