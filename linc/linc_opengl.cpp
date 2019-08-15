@@ -7,12 +7,6 @@ namespace linc {
     namespace opengl {
         namespace webgl {
 
-            #ifdef LINC_OPENGL_GLEW
-                #define HAS_EXT_framebuffer_object GLEW_EXT_framebuffer_object
-            #else
-                #define HAS_EXT_framebuffer_object true
-            #endif
-
             int createTexture() {
                 unsigned int id = 0;
                 glGenTextures(1,&id);
