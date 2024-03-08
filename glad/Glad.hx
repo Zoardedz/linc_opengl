@@ -21,6 +21,8 @@ extern class Glad
 @:keep
 @:unreflective
 @:include('glad/glad.h')
+//im actually raging
+@:structAccess
 @:native('gladGLVersionStruct')
 extern class GladGLVersionStruct
 {
