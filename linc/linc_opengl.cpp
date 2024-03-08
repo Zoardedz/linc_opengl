@@ -123,7 +123,7 @@ namespace linc {
                     case GL_POLYGON_OFFSET_FILL:
                     case GL_SAMPLE_COVERAGE_INVERT:
                     case GL_STENCIL_TEST:
-                    case GL_ALPHA_BITS:
+                    //case GL_ALPHA_BITS:
                     case GL_ACTIVE_TEXTURE:
                     case GL_BLEND_DST_ALPHA:
                     case GL_BLEND_DST_RGB:
@@ -131,14 +131,14 @@ namespace linc {
                     case GL_BLEND_EQUATION_RGB:
                     case GL_BLEND_SRC_ALPHA:
                     case GL_BLEND_SRC_RGB:
-                    case GL_BLUE_BITS:
+                    //case GL_BLUE_BITS:
                     case GL_CULL_FACE_MODE:
-                    case GL_DEPTH_BITS:
+                    //case GL_DEPTH_BITS:
                     case GL_DEPTH_FUNC:
                     case GL_DEPTH_TEST:
                     case GL_FRONT_FACE:
-                    case GL_GENERATE_MIPMAP_HINT:
-                    case GL_GREEN_BITS:
+                    //case GL_GENERATE_MIPMAP_HINT:
+                    //case GL_GREEN_BITS:
                     case GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS:
                     case GL_MAX_CUBE_MAP_TEXTURE_SIZE:
                     case GL_MAX_TEXTURE_IMAGE_UNITS:
@@ -147,7 +147,7 @@ namespace linc {
                     case GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS:
                     case GL_NUM_COMPRESSED_TEXTURE_FORMATS:
                     case GL_PACK_ALIGNMENT:
-                    case GL_RED_BITS:
+                    //case GL_RED_BITS:
                     case GL_SAMPLE_BUFFERS:
                     case GL_SAMPLES:
                     case GL_SCISSOR_TEST:
@@ -159,7 +159,7 @@ namespace linc {
                     case GL_STENCIL_BACK_REF:
                     case GL_STENCIL_BACK_VALUE_MASK:
                     case GL_STENCIL_BACK_WRITEMASK:
-                    case GL_STENCIL_BITS:
+                    //case GL_STENCIL_BITS:
                     case GL_STENCIL_CLEAR_VALUE:
                     case GL_STENCIL_FAIL:
                     case GL_STENCIL_FUNC:
