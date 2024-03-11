@@ -19,6 +19,9 @@ namespace linc {
 
     namespace opengl {
 
+        extern const char* getString(int name);
+        extern const char* getStringi(int name, int index);
+
         namespace webgl {
             extern int createTexture();
             extern void deleteTexture(int id);

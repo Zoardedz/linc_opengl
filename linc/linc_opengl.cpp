@@ -5,6 +5,15 @@
 
 namespace linc {
     namespace opengl {
+
+        const char* getString(int name){
+            return (const char*)glGetString(name);
+        }
+
+        const char* getStringi(int name, int index){
+            return (const char*)glGetStringi(name, index);
+        }
+
         namespace webgl {
 
             int createTexture() {

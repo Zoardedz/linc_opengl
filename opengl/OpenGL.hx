@@ -516,7 +516,7 @@ typedef GLDEBUGPROC = cpp.Callable<(_source:GLenum, _type:GLenum, _id:GLuint, _s
 
 }
 
-@:keep @:structAccess @:include("glad/glad.h") @:build(linc.Linc.touch()) @:build(linc.Linc.xml("opengl")) extern class OpenGL {
+@:keep @:structAccess @:include("linc_opengl.h") @:build(linc.Linc.touch()) @:build(linc.Linc.xml("opengl")) extern class OpenGL {
 	static inline var GL_DEPTH_BUFFER_BIT : Int = 0x00000100;
 	static inline var GL_STENCIL_BUFFER_BIT : Int = 0x00000400;
 	static inline var GL_COLOR_BUFFER_BIT : Int = 0x00004000;
@@ -3307,4 +3307,9 @@ typedef GLDEBUGPROC = cpp.Callable<(_source:GLenum, _type:GLenum, _id:GLuint, _s
 	static function glMultiDrawElementsIndirectCount(_mode:GLenum, _type:GLenum, _indirect:VoidPointer, _drawcount:GLintptr, _maxdrawcount:GLsizei, _stride:GLsizei):cpp.Void;
 	@:native("glPolygonOffsetClamp")
 	static function glPolygonOffsetClamp(_factor:GLfloat, _units:GLfloat, _clamp:GLfloat):cpp.Void;
+	//linc_opengl implementations
+	@:native('linc::opengl::getString')
+	static function getString(name:GLint):cpp.ConstCharStar;
+	@:native('linc::opengl::getStringi')
+	static function getStringi(name:GLint, index:GLint):cpp.ConstCharStar;
 }
